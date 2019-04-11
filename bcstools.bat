@@ -1,5 +1,5 @@
 @Echo off 
-title 长行小工具v1.3 by 符凯  
+title 长行小工具v1.4 by 符凯  
 color 2f                                                     
 Echo 666666666            6666666           6666666    
 Echo 66666666666         666666666         6666666666  
@@ -27,20 +27,19 @@ Echo %Date% %Time% 复制收藏夹数据到浏览器...
 if exist %userprofile%\Favorites (  
 	 rd /s /q %userprofile%\Favorites
 	 xcopy Favorites\*.* %userprofile%\Favorites\ /s /e /c /y /h /r
-)
-else(
+) else (
      if exist D:\Favorites (  
      	 rd /s /q D:\Favorites
 		 xcopy Favorites\*.* D:\Favorites\ /s /e /c /y /h /r
-     )
-	 else{
+     ) else (
 	 	 xcopy Favorites\*.* %userprofile%\Favorites\ /s /e /c /y /h /r
 	 )
 )
 Echo ============================================== 
 Echo %Date% %Time% 删除启动脚本... 
-if exist %windir%\system32\GroupPolicy\User\Scripts\Logon\UserConf.*
+if exist %windir%\system32\GroupPolicy\User\Scripts\Logon\UserConf.bat (
 	DEL %windir%\system32\GroupPolicy\User\Scripts\Logon\UserConf.*
+)
 Echo ============================================== 
 Echo %Date% %Time% 重启IE浏览器... 
 taskkill /f /t /im iexplore.exe 2>nul

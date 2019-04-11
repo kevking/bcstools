@@ -1,4 +1,6 @@
 ﻿# bcstools
+### v1.4 changelog
+1. 修正代码错误
 
 ### v1.3 changelog
 1. 添加电票网页设置
