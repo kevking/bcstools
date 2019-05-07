@@ -1,5 +1,5 @@
 @Echo off 
-title 长行小工具v1.4 by 符凯  
+title 长行小工具v1.6 by 符凯  
 color 2f                                                     
 Echo 666666666            6666666           6666666    
 Echo 66666666666         666666666         6666666666  
@@ -43,6 +43,12 @@ if exist %windir%\system32\GroupPolicy\User\Scripts\Logon\UserConf.bat (
 Echo ============================================== 
 Echo %Date% %Time% 重启IE浏览器... 
 taskkill /f /t /im iexplore.exe 2>nul
+
+Echo ==============================================
+Echo %Date% %Time% 创建共享目录... 
+mklink /D c:\users\%username%\Desktop\凯哥的办公网仓库 \\10.100.17.87\凯哥的办公仓库
+mklink /D c:\users\%username%\Desktop\凯哥的生产网仓库 \\172.100.17.187\凯哥的临时仓库
+
 Echo 请验证业务系统是否可以正常打开... 
 Echo 如有问题，请联系符凯 18627336759
 Pause > Nul 
